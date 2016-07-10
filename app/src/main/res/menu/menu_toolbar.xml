@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_settings1"
+        android:orderInCategory="1"
+        android:title="setting1"/>
+
+
+    <item
+        android:id="@+id/action_settings2"
+        android:orderInCategory="2"
+        android:title="setting2"/>
+
+    <!-- app:showAsAction有三个值：
+            always：总是显示在界面上
+            never：不显示在界面上，只让出现在右边的三个点中
+            ifRoom：如果有位置才显示，不然就出现在右边的三个点中 -->
+    <item
+        android:id="@+id/menu_search"
+        android:title="搜索"
+        android:icon="@mipmap/search_logo"
+        app:showAsAction="ifRoom"
+        android:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item android:id="@+id/menu_share"
+          android:title="分享"
+          android:icon="@mipmap/mediacontroller_share"
+          app:showAsAction="ifRoom"
+          android:actionProviderClass="android.widget.ShareActionProvider" />
+
+</menu>
