@@ -7,9 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.weerjean.testdemo.BaseActivity;
+import com.weerjean.testdemo.base.BaseActivity;
 import com.weerjean.testdemo.R;
-import com.weerjean.testdemo.utils.MyUtils;
+import com.weerjean.testdemo.utils.ToastUtils;
 
 /**
  * Created by weerjean on 2016/7/10.
@@ -43,10 +43,10 @@ public class ToolBarActivity extends BaseActivity {
 
         switch (item.getItemId()){
             case R.id.action_settings1:
-                MyUtils.toast(this, item.getTitle()+"被点击了");
+                ToastUtils.toast(this, item.getTitle() + "被点击了");
                 break;
             case R.id.action_settings2:
-                MyUtils.toast(this, item.getTitle()+"被点击了");
+                ToastUtils.toast(this, item.getTitle() + "被点击了");
                 break;
 
         }
@@ -67,7 +67,6 @@ public class ToolBarActivity extends BaseActivity {
 
 
     private void initView() {
-        mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
         initActionBar();
     }
 

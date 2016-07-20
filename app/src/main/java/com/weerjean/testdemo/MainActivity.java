@@ -6,6 +6,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.weerjean.testdemo.base.BaseActivity;
+import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.toolbar.ToolBarActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -41,7 +43,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void initView() {
         setContentView(R.layout.activity_main);
-        initActionBar();
         mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_1.setOnClickListener(this);
@@ -83,6 +84,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_19.setOnClickListener(this);
         btn_20 = (Button) findViewById(R.id.btn_20);
         btn_20.setOnClickListener(this);
+        initActionBar();
     }
 
     private void initActionBar() {
@@ -100,7 +102,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.btn_2:
-
+                Intent intent2 = new Intent(this, NetWorkActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.btn_3:
 

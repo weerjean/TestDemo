@@ -1,4 +1,4 @@
-package com.weerjean.testdemo;
+package com.weerjean.testdemo.base;
 
 import android.support.v7.app.AppCompatActivity;
 
