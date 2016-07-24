@@ -6,9 +6,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.weerjean.testdemo.toolbar.ToolBarActivity;
+import com.weerjean.testdemo.toolbar.ToolbarActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
 
     private Toolbar mToolBar;
     private Button btn_1;
@@ -39,9 +39,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
-    private void initView() {
-        setContentView(R.layout.activity_main);
-        initActionBar();
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    protected void initView() {
+//        initActionBar();
         mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_1.setOnClickListener(this);
@@ -85,18 +89,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btn_20.setOnClickListener(this);
     }
 
-    private void initActionBar() {
-        // 如果不设置title，ToolBar上默认显示的AppName
-        setTitle("主页");
-        setSupportActionBar(mToolBar);
-    }
+//    private void initActionBar() {
+//        // 如果不设置title，ToolBar上默认显示的AppName
+//        setTitle("主页");
+//        setSupportActionBar(mToolBar);
+//    }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
-                Intent intent = new Intent(this, ToolBarActivity.class);
+                Intent intent = new Intent(this, ToolbarActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_2:

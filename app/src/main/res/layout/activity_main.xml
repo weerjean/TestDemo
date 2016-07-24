@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.weerjean.testdemo.MainActivity">
-    <include layout="@layout/toolbar_1"></include>
+    <!--<include layout="@layout/toolbar_1"></include>-->
 
     <ScrollView
         android:layout_width="match_parent"

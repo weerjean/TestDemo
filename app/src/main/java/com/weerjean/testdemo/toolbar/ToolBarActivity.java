@@ -2,19 +2,19 @@ package com.weerjean.testdemo.toolbar;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.weerjean.testdemo.BaseActivity;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.utils.MyUtils;
 
 /**
  * Created by weerjean on 2016/7/10.
  */
-public class ToolBarActivity extends BaseActivity {
+public class ToolbarActivity extends AppCompatActivity{
 
     private Toolbar mToolBar;
 
