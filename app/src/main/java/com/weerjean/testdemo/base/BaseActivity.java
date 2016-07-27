@@ -1,4 +1,4 @@
-package com.weerjean.testdemo;
+package com.weerjean.testdemo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,5 +1,6 @@
 package com.weerjean.testdemo.recyclerview;
 
+import com.weerjean.testdemo.base.BaseActivity;
 import com.weerjean.testdemo.BaseToolbarActivity;
 
 /**

@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.weerjean.testdemo.R;
-import com.weerjean.testdemo.utils.MyUtils;
+import com.weerjean.testdemo.utils.ToastUtils;
 
 /**
  * Created by weerjean on 2016/7/10.
@@ -43,10 +43,10 @@ public class ToolbarActivity extends AppCompatActivity{
 
         switch (item.getItemId()){
             case R.id.action_settings1:
-                MyUtils.toast(this, item.getTitle()+"被点击了");
+                ToastUtils.toast(this, item.getTitle() + "被点击了");
                 break;
             case R.id.action_settings2:
-                MyUtils.toast(this, item.getTitle()+"被点击了");
+                ToastUtils.toast(this, item.getTitle() + "被点击了");
                 break;
 
         }

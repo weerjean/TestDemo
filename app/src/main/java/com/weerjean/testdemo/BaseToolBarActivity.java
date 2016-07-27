@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.Window;
 
+import com.weerjean.testdemo.base.BaseActivity;
+
 /**
  * Created by weerjean on 2016/7/24.
  */

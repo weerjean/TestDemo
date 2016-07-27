@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.toolbar.ToolbarActivity;
 
 public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
@@ -104,7 +105,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.btn_2:
-
+                Intent intent2 = new Intent(this, NetWorkActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.btn_3:
 
