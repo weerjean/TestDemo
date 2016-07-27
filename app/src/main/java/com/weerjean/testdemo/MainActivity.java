@@ -3,6 +3,7 @@ package com.weerjean.testdemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +12,11 @@ import com.weerjean.testdemo.toolbar.ToolbarActivity;
 
 public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
 
-    private Toolbar mToolBar;
+    //    private void initActionBar() {
+//        // 如果不设置title，ToolBar上默认显示的AppName
+//        setTitle("主页");
+//        setSupportActionBar(mToolBar);
+    private static final String TAG = "MainActivity";
     private Button btn_1;
     private Button btn_2;
     private Button btn_3;
@@ -31,6 +36,7 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
     private Button btn_17;
     private Button btn_18;
     private Button btn_19;
+
     private Button btn_20;
 
     @Override
@@ -47,7 +53,7 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
 
     protected void initView() {
 //        initActionBar();
-        mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_1.setOnClickListener(this);
         btn_2 = (Button) findViewById(R.id.btn_2);
@@ -90,12 +96,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
         btn_20.setOnClickListener(this);
     }
 
-//    private void initActionBar() {
-//        // 如果不设置title，ToolBar上默认显示的AppName
-//        setTitle("主页");
-//        setSupportActionBar(mToolBar);
-//    }
 
+//    }
 
     @Override
     public void onClick(View v) {
@@ -157,10 +159,10 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
 
                 break;
             case R.id.btn_19:
-
+                Log.d(TAG, null);
                 break;
             case R.id.btn_20:
-
+                Log.e(TAG, "");
                 break;
         }
     }

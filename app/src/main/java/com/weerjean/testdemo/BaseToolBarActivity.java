@@ -29,7 +29,7 @@ public abstract class BaseToolbarActivity extends BaseActivity {
     protected void initToolBar() {
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.toolbar_1);
         mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
-        setSupportActionBar(mToolbar);
+        //setSupportActionBar(mToolbar);
     }
 
     @Override
