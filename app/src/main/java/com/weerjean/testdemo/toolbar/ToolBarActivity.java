@@ -14,9 +14,9 @@ import com.weerjean.testdemo.utils.ToastUtils;
 /**
  * Created by weerjean on 2016/7/10.
  */
-public class ToolbarActivity extends AppCompatActivity{
+class ToolbarActivity extends AppCompatActivity{
 
-    private Toolbar mToolBar;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class ToolbarActivity extends AppCompatActivity{
 
     private void initEvent() {
 
-        mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -67,19 +67,19 @@ public class ToolbarActivity extends AppCompatActivity{
 
 
     private void initView() {
-        mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
         initActionBar();
     }
 
     private void initActionBar() {
-        mToolBar = (Toolbar) findViewById(R.id.toolbar_1);
-        mToolBar.setNavigationIcon(R.mipmap.ic_back);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
+        mToolbar.setNavigationIcon(R.mipmap.ic_back);
         // 如果不设置主标题，ToolBar上默认显示的AppName
         setTitle("ToolBar");
-        setSupportActionBar(mToolBar);
-        mToolBar.setLogo(R.mipmap.logo_qzone);
-        mToolBar.setTitle("Titile");
-        mToolBar.setSubtitle("SubTitile");
+        setSupportActionBar(mToolbar);
+        mToolbar.setLogo(R.mipmap.logo_qzone);
+        mToolbar.setTitle("Titile");
+        mToolbar.setSubtitle("SubTitile");
 
     }
 
