@@ -3,10 +3,14 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_1"></include>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="#FF4081"
+        android:dividerHeight="10dp">
 
     </android.support.v7.widget.RecyclerView>
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.weerjean.testdemo.network.NetWorkActivity;
+import com.weerjean.testdemo.recyclerview.RecyclerViewActivity;
 import com.weerjean.testdemo.toolbar.ToolbarActivity;
 
 public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
@@ -111,7 +112,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 startActivity(intent2);
                 break;
             case R.id.btn_3:
-
+                Intent intent3 = new Intent(this, RecyclerViewActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.btn_4:
 
@@ -166,4 +168,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 break;
         }
     }
+
+
+
+
 }

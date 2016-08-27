@@ -7,9 +7,4 @@ import com.weerjean.testdemo.base.BaseActivity;
  */
 public abstract class NoTitleBarActivity extends BaseActivity {
 
-    @Override
-    protected void initToolBar() {
-
-    }
-
 }

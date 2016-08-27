@@ -14,7 +14,7 @@ import com.weerjean.testdemo.utils.ToastUtils;
 /**
  * Created by weerjean on 2016/7/10.
  */
-class ToolbarActivity extends AppCompatActivity{
+public class ToolbarActivity extends AppCompatActivity{
 
     private Toolbar mToolbar;
 
