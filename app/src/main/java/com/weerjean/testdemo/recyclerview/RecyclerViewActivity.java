@@ -20,6 +20,7 @@ import com.weerjean.testdemo.utils.ToastUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -32,7 +33,10 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
 
     private List<ItemData> mItemDatas;
     private RecyclerView mRecyclerView;
-//    private SwipeRefreshLayout mRefreshLayout;
+    private LinearLayoutManager mLayoutManager;
+    private int mLastVisibleItem;
+    private int mPageCount=0;
+    //    private SwipeRefreshLayout mRefreshLayout;
 
     @Override
     protected int getLayoutId() {
@@ -44,6 +48,7 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
         super.onCreate(savedInstanceState);
         initView();
         initDate();
+        initEvent();
     }
 
     @Override
@@ -139,9 +144,9 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recylerview);
 //        mRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.refreshLayout);
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
 
     }
@@ -149,7 +154,7 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
     @Override
     protected void initDate() {
 
-        OkHttpUtils.get().url("http://gank.io/api/data/福利/10/1")
+        OkHttpUtils.get().url("http://gank.io/api/data/福利/10/"+mPageCount)
                 .build()
                 .execute(new StringCallback() {
                     @Override
@@ -163,13 +168,42 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String jsonData = jsonObject.getString("results");
-                            mItemDatas = new Gson().fromJson(jsonData, new TypeToken<List<ItemData>>() {
+                            if(mItemDatas==null){
+                                mItemDatas=new ArrayList<ItemData>();
+                            }
+
+                            ArrayList<ItemData> itemDatas = new Gson().fromJson(jsonData, new TypeToken<List<ItemData>>() {
                             }.getType());
+                            mItemDatas.addAll(itemDatas);
+                            mPageCount++;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 });
 
+    }
+
+
+    @Override
+    protected void initEvent() {
+
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                if(newState==RecyclerView.SCROLL_STATE_IDLE&&mLastVisibleItem+2>=mLayoutManager.getItemCount()){
+                    initDate();
+                }
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                mLastVisibleItem=mLayoutManager.findLastVisibleItemPosition();
+            }
+        });
     }
 }
