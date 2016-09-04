@@ -13,21 +13,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        initView();
-        initDate();
-        initEvent();
-
     }
 
     protected abstract int getLayoutId();
 
-    protected abstract void initView();
-
-    protected void initDate(){
-
-    }
-
-    protected void initEvent(){
-
-    }
 }

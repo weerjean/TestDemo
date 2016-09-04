@@ -41,11 +41,6 @@ public abstract class BaseToolbarActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected void initView() {
-
-    }
-
 
     protected void setTitle(String title){
         mToolbar.setTitle(title);

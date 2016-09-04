@@ -3,6 +3,8 @@ package com.weerjean.testdemo.base;
 import android.app.Application;
 
 import com.paem.okhttp.OkHttpUtils;
+import com.paem.okhttp.cookie.CookieJarImpl;
+import com.paem.okhttp.cookie.store.PersistentCookieStore;
 import com.paem.okhttp.https.HttpsUtils;
 import com.paem.okhttp.log.LoggerInterceptor;
 import com.weerjean.testdemo.utils.Constants;
@@ -29,9 +31,10 @@ public class MyApplication extends Application{
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
 
-        builder.connectTimeout(30000, TimeUnit.MILLISECONDS)
-                .readTimeout(30000, TimeUnit.MILLISECONDS)
-                .writeTimeout(30000, TimeUnit.MILLISECONDS);
+         builder.connectTimeout(40000, TimeUnit.MILLISECONDS)
+                .readTimeout(40000, TimeUnit.MILLISECONDS)
+                .writeTimeout(40000, TimeUnit.MILLISECONDS)
+                .cookieJar(new CookieJarImpl(new PersistentCookieStore(this)));
 
         if(Constants.IS_DEBUG){
 

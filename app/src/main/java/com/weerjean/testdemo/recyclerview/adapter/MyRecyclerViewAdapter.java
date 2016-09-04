@@ -40,7 +40,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // View绑定数据
         holder.tv.setText("图片："+position);
-        Picasso.with(mContext).load(mItemDatas.get(position).getUrl()).resize(200,200).into(holder.iv);
+        Picasso.with(mContext).load(mItemDatas.get(position).getUrl()).resize(500,500).into(holder.iv);
     }
 
     @Override
