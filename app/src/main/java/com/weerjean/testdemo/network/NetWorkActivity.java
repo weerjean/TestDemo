@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.weerjean.testdemo.BaseToolbarActivity;
+import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.R;
 
 /**
@@ -84,8 +84,15 @@ public class NetWorkActivity extends BaseToolbarActivity implements View.OnClick
 
                 break;
             case R.id.btn_8:
-
+                // 测试Https的可靠性
+                testHttps();
                 break;
         }
+    }
+
+    private void testHttps() {
+
+        Intent intent = new Intent(this, TestHttpsActivity.class);
+        startActivity(intent);
     }
 }

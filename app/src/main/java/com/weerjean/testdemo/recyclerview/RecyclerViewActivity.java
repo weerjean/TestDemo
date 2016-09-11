@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.paem.okhttp.OkHttpUtils;
 import com.paem.okhttp.callback.StringCallback;
-import com.weerjean.testdemo.BaseToolbarActivity;
+import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.recyclerview.adapter.ItemData;
 import com.weerjean.testdemo.recyclerview.adapter.MyRecyclerViewAdapter;

@@ -213,13 +213,17 @@ public class HttpsUtils
         @Override
         public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException
         {
-            try
-            {
-                defaultTrustManager.checkServerTrusted(chain, authType);
-            } catch (CertificateException ce)
-            {
-                localTrustManager.checkServerTrusted(chain, authType);
-            }
+            // 本地校验证书，为了安全只让本地添加过的证书的https请求通过验证。
+            localTrustManager.checkServerTrusted(chain, authType);
+//            try
+//            {
+//                // 默认的方式校验证书，手机信任列表的证书都可以通过
+//                defaultTrustManager.checkServerTrusted(chain, authType);
+//            } catch (CertificateException ce)
+//            {
+//                // 本地校验证书，apk中通过流加载的证书可以通过。
+//                localTrustManager.checkServerTrusted(chain, authType);
+//            }
         }
 
 

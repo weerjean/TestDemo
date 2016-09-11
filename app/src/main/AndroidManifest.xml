@@ -25,6 +25,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity android:name=".network.NetWorkActivity"></activity>
         <activity android:name=".network.OkhttpUtilsActivity"></activity>
+        <activity android:name=".network.TestHttpsActivity"></activity>
     </application>
 
 </manifest>

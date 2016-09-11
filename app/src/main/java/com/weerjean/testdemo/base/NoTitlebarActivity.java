@@ -1,4 +1,4 @@
-package com.weerjean.testdemo;
+package com.weerjean.testdemo.base;
 
 import com.weerjean.testdemo.base.BaseActivity;
 
