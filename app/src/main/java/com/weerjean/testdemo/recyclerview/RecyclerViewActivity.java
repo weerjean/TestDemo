@@ -1,7 +1,6 @@
 package com.weerjean.testdemo.recyclerview;
 
 import android.app.Dialog;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,10 +14,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.paem.okhttp.OkHttpUtils;
 import com.paem.okhttp.callback.StringCallback;
-import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.R;
+import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.recyclerview.adapter.ItemData;
 import com.weerjean.testdemo.recyclerview.adapter.MyRecyclerViewAdapter;
+import com.weerjean.testdemo.recyclerview.itemdecoration.GridItemDecoration;
+import com.weerjean.testdemo.recyclerview.itemdecoration.ListItemDecoration;
 import com.weerjean.testdemo.utils.DialogUtils;
 import com.weerjean.testdemo.utils.ToastUtils;
 
@@ -96,8 +97,12 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                     switch (item.getItemId()) {
                         case 0:
                             ToastUtils.toast(this, "ListView标准显示");
+                            // 设置layoutManager
                             mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new ListItemDecoration(this,ListItemDecoration.VERTICAL_LIST));
+                            // 设置adapter
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -105,6 +110,8 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "ListView垂直反向");
                             mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new ListItemDecoration(this,ListItemDecoration.VERTICAL_LIST));
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -112,6 +119,8 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "ListView水平显示");
                             mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new ListItemDecoration(this,ListItemDecoration.HORIZONTAL_LIST));
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -119,6 +128,8 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "ListView水平反向");
                             mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new ListItemDecoration(this,ListItemDecoration.HORIZONTAL_LIST));
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -130,12 +141,17 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "GridView标准显示");
                             mLayoutManager = new GridLayoutManager(this,3);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new GridItemDecoration(this));
+
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
                         case 1:
                             ToastUtils.toast(this, "GridView垂直反向");
                             mLayoutManager = new GridLayoutManager(this,3,GridLayoutManager.VERTICAL,true);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new GridItemDecoration(this));
                             mRecyclerView.setLayoutManager(mLayoutManager);
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
@@ -144,6 +160,8 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "GridView水平显示");
                             mLayoutManager = new GridLayoutManager(this,3,GridLayoutManager.HORIZONTAL,false);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new GridItemDecoration(this));
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -151,6 +169,8 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
                             ToastUtils.toast(this, "GridView水平反向");
                             mLayoutManager = new GridLayoutManager(this,3,GridLayoutManager.HORIZONTAL,true);
                             mRecyclerView.setLayoutManager(mLayoutManager);
+                            // 设置分隔线
+                            mRecyclerView.addItemDecoration(new GridItemDecoration(this));
                             mAdapter = new MyRecyclerViewAdapter(this, mItemDatas);
                             mRecyclerView.setAdapter(mAdapter);
                             break;
@@ -205,15 +225,16 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
     }
 
     private void initView() {
+        /*
+         * 1.找到控件
+         * 2.设置LayoutManager
+         * 3.设置分割线
+         * 4.设置item动画
+         * 5.设置Adapter
+         */
         mRecyclerView = (RecyclerView) findViewById(R.id.recylerview);
 //        mRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.refreshLayout);
-
-        mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                super.onDraw(c, parent, state);
-            }
-        }); // 设置分割线
+//        mRecyclerView.addItemDecoration(new ListItemDecoration(this,orientation)); // 设置分割线
 
 
     }

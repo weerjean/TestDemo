@@ -11,6 +11,8 @@
         <!-- 设置菜单的样式为不覆盖titleBar-->
         <item name="actionOverflowMenuStyle">@style/my_menu</item>
 
+<!--        <item name="android:listDivider">@drawable/listdivider</item>-->
+
     </style>
 
     <style name="my_menu" parent="Base.Widget.AppCompat.Light.PopupMenu.Overflow">
