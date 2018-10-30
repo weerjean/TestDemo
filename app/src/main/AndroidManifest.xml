@@ -26,6 +26,9 @@
         <activity android:name=".network.NetWorkActivity"></activity>
         <activity android:name=".network.OkhttpUtilsActivity"></activity>
         <activity android:name=".network.TestHttpsActivity"></activity>
+
+        <meta-data android:name="android.max_aspect" android:value="2.34" />
+
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ import com.weerjean.testdemo.recyclerview.adapter.ItemData;
 import com.weerjean.testdemo.recyclerview.adapter.MyRecyclerViewAdapter;
 import com.weerjean.testdemo.recyclerview.itemdecoration.GridItemDecoration;
 import com.weerjean.testdemo.recyclerview.itemdecoration.ListItemDecoration;
+import com.weerjean.testdemo.utils.Constants;
 import com.weerjean.testdemo.utils.DialogUtils;
 import com.weerjean.testdemo.utils.ToastUtils;
 
@@ -241,7 +242,7 @@ public class RecyclerViewActivity extends BaseToolbarActivity {
 
     private void initDate() {
 
-        OkHttpUtils.get().url("http://gank.io/api/data/福利/10/" + mPageCount)
+        OkHttpUtils.get().url(Constants.PUBLIC_SERVER+Constants.PUBLIC_FULI_IMG_URL + mPageCount)
                 .build()
                 .execute(new StringCallback() {
 

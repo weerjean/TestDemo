@@ -2,7 +2,9 @@ package com.weerjean.testdemo.network;
 
 import android.app.Activity;
 
+import android.content.res.AssetManager;
 import com.hy.okhttp.utils.L;
+import com.weerjean.testdemo.base.MyApplication;
 import com.weerjean.testdemo.utils.ToastUtils;
 
 import org.apache.http.conn.ssl.SSLSocketFactory;
@@ -39,13 +41,16 @@ public class OkhttpUtils {
     public static void post(Activity context, String url) {
 
         try {
-            InputStream in1 = context.getAssets().open("1qianbao.cer");
-            InputStream in2 = context.getAssets().open("pingan.cer");
-            InputStream in3 = context.getAssets().open("stg_1qianbao.cer");
-            InputStream in4 = context.getAssets().open("pingan_new.cer");
-            InputStream in5 = context.getAssets().open("paf_stg.cer");
 
-            OkHttpClient mOkHttpClient = setCertificates(new InputStream[]{in1,in2,in3,in4,in5});
+            AssetManager assetManager = MyApplication.getInstance().getAssets();
+            String[] cas =  assetManager.list("ca");
+            InputStream [] inputStreams = new InputStream[cas.length];
+            for (int i= 0;i<cas.length;i++) {
+                InputStream in = assetManager.open(cas[i]);
+                inputStreams[i] =in;
+            }
+
+            OkHttpClient mOkHttpClient = setCertificates(inputStreams);
 
             if (mOkHttpClient == null) {
                 ToastUtils.toast(context, "證書加載失敗");
