@@ -5,9 +5,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.paem.okhttp.OkHttpUtils;
-import com.paem.okhttp.callback.StringCallback;
-import com.paem.okhttp.utils.L;
+import com.hy.okhttp.OkHttpUtils;
+import com.hy.okhttp.callback.StringCallback;
+import com.hy.okhttp.utils.L;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseActivity;
 import com.weerjean.testdemo.utils.Constants;
@@ -112,7 +112,7 @@ public class OkhttpUtilsActivity extends BaseActivity implements View.OnClickLis
      */
     private void sycGet() {
 
-        ThreadPoolManager.execut(new Runnable() {
+        ThreadPoolManager.getInstance().execut(new Runnable() {
             @Override
             public void run() {
 

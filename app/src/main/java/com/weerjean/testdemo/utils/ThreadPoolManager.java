@@ -34,7 +34,7 @@ public class ThreadPoolManager {
      * 添加任务
      * @param task 任务线程
      */
-    public static void execut(Runnable task){
+    public void execut(Runnable task){
         mExecutor.submit(task);
     }
 

@@ -2,9 +2,9 @@ package com.weerjean.testdemo.base;
 
 import android.app.Application;
 
-import com.paem.okhttp.OkHttpUtils;
-import com.paem.okhttp.https.HttpsUtils;
-import com.paem.okhttp.log.LoggerInterceptor;
+import com.hy.okhttp.OkHttpUtils;
+import com.hy.okhttp.https.HttpsUtils;
+import com.hy.okhttp.log.LoggerInterceptor;
 import com.weerjean.testdemo.utils.Constants;
 
 import java.util.concurrent.TimeUnit;
