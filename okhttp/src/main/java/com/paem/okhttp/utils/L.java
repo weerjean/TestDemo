@@ -23,6 +23,14 @@ public class L
         }
     }
 
+    public static void d(String tag,String msg){
+        if (debug)
+        {
+            Log.d(tag, msg);
+        }
+    }
+
+
     public static void p(int logLv, String msg){
 
         if (debug){

@@ -6,14 +6,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.paem.okhttp.OkHttpUtils;
+import com.paem.okhttp.callback.StringCallback;
 import com.paem.okhttp.utils.L;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseActivity;
 import com.weerjean.testdemo.utils.Constants;
+import com.weerjean.testdemo.utils.ThreadPoolManager;
 import com.weerjean.testdemo.utils.ToastUtils;
 
 import java.io.IOException;
 
+import okhttp3.Call;
 import okhttp3.Response;
 
 /**
@@ -22,6 +25,7 @@ import okhttp3.Response;
  */
 public class OkhttpUtilsActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final String TAG = "OkhttpUtilsActivity";
     private Toolbar toolbar_1;
     private Button btn_1;
     private Button btn_2;
@@ -69,10 +73,12 @@ public class OkhttpUtilsActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
+                //同步GET
                 sycGet();
                 break;
             case R.id.btn_2:
-
+                // 异步GET
+                asycGet();
                 break;
             case R.id.btn_3:
 
@@ -101,16 +107,39 @@ public class OkhttpUtilsActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * 同步get请求，需要在子线程中进行
+     */
     private void sycGet() {
 
-        try {
-            Response response = OkHttpUtils.get().url(Constants.JSON_URL).build().execute();
+        ThreadPoolManager.execut(new Runnable() {
+            @Override
+            public void run() {
 
-            ToastUtils.toast(this,response.body().string());
-        } catch (IOException e) {
-            L.e(e.getMessage());
-        }catch (Exception e){
-            L.e(e.getMessage());
-        }
+                try {
+                    Response response = OkHttpUtils.get().url(Constants.JSON_URL).build().execute();
+                    ToastUtils.toast(OkhttpUtilsActivity.this,response.body().string());
+                } catch (Exception e) {
+                    L.d(TAG,e.toString());
+                }
+            }
+        });
+    }
+
+    /**
+     * 异步get，自己会创建子线程中，回调会回到主线程。
+     */
+    private void asycGet() {
+        OkHttpUtils.post().url(Constants.JSON_URL).build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                L.d(TAG,e.toString());
+            }
+
+            @Override
+            public void onResponse(Call call, String response, int id) {
+                ToastUtils.toast(OkhttpUtilsActivity.this,response);
+            }
+        });
     }
 }

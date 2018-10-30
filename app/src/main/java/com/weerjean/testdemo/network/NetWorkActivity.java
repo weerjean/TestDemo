@@ -59,6 +59,7 @@ public class NetWorkActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
+                // Okhttp网络框架
                 Intent intent = new Intent(this, OkhttpUtilsActivity.class);
                 startActivity(intent);
                 break;
