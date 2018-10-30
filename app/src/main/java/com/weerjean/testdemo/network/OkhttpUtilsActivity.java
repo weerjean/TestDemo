@@ -1,16 +1,18 @@
 package com.weerjean.testdemo.network;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.paem.okhttp.OkHttpUtils;
-import com.paem.okhttp.callback.StringCallback;
-import com.paem.okhttp.utils.L;
+import com.hy.okhttp.OkHttpUtils;
+import com.hy.okhttp.callback.StringCallback;
+import com.hy.okhttp.utils.L;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.base.MyApplication;
 import com.weerjean.testdemo.utils.Constants;
+import com.weerjean.testdemo.utils.ThreadPoolManager;
 import com.weerjean.testdemo.utils.ToastUtils;
 
 import java.io.File;
@@ -26,6 +28,8 @@ import okhttp3.Response;
  */
 public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnClickListener {
 
+    private static final String TAG = "OkhttpUtilsActivity";
+    private Toolbar toolbar_1;
     private Button btn_1;
     private Button btn_2;
     private Button btn_3;
@@ -356,6 +360,9 @@ public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnC
 
     }
 
+    /**
+     * 异步get，自己会创建子线程中，回调会回到主线程。
+     */
     private void asycGet() {
 
         OkHttpUtils.get().url(Constants.YQB_URL)
@@ -377,13 +384,20 @@ public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnC
 
     }
 
+    /**
+     * 同步get请求，需要在子线程中进行
+     */
     private void sycGet() {
 
-        new Thread(new Runnable() {
+        ThreadPoolManager.getInstance().execut(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = OkHttpUtils.get().url(Constants.JSON_URL).params(mLinkedHashMap).build().execute();
+                    Response response = OkHttpUtils.get()
+                        .url(Constants.JSON_URL)
+                        .params(mLinkedHashMap)
+                        .build()
+                        .execute();
 
                     ToastUtils.toast(OkhttpUtilsActivity.this, response.body().string());
                 } catch (IOException e) {
@@ -392,7 +406,7 @@ public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnC
                     L.e(e.getMessage());
                 }
             }
-        }).start();
+        });
 
     }
 }

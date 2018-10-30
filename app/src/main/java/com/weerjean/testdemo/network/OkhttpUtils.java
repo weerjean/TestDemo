@@ -2,7 +2,7 @@ package com.weerjean.testdemo.network;
 
 import android.app.Activity;
 
-import com.paem.okhttp.utils.L;
+import com.hy.okhttp.utils.L;
 import com.weerjean.testdemo.utils.ToastUtils;
 
 import org.apache.http.conn.ssl.SSLSocketFactory;
