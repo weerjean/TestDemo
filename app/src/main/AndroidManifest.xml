@@ -57,6 +57,9 @@
             android:value="c1ltEoNQnWXpCPr8xR5FiSjGMmtGrz8H" >
         </meta-data>
 
+
+        <meta-data android:name="android.max_aspect" android:value="2.34" />
+
     </application>
 
 </manifest>

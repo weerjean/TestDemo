@@ -18,4 +18,8 @@ public interface Constants {
     String JSON_URL = "https://test1-puhui-web.pingan.com.cn:10143/manager/stg/paem/zed_anydoor/data/address.json";
 
     String TAG_OKHTTP = "OKHTTP";
+
+    String PUBLIC_SERVER = "https://gank.io";
+
+    String PUBLIC_FULI_IMG_URL = "/api/data/福利/10/";
 }
