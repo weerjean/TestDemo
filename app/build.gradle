@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.weerjean.testdemo"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -33,4 +33,5 @@ dependencies {
     compile project(':okhttp')
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.google.code.gson:gson:2.7'
+    implementation project(':lbs')
 }

@@ -1,5 +1,7 @@
 package com.weerjean.testdemo;
 
+import android.Manifest;
+import android.Manifest.permission;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,16 +10,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.weerjean.testdemo.base.BaseToolbarActivity;
+import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.recyclerview.RecyclerViewActivity;
 import com.weerjean.testdemo.toolbar.ToolbarActivity;
+import com.weerjean.testdemo.utils.ToastUtils;
+import com.weerjean.testdemo.utils.permission.PermissionsActivity;
+import com.weerjean.testdemo.utils.permission.PermissionsChecker;
 
 public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
 
-    //    private void initActionBar() {
-//        // 如果不设置title，ToolBar上默认显示的AppName
-//        setTitle("主页");
-//        setSupportActionBar(mToolBar);
     private static final String TAG = "MainActivity";
     private Button btn_1;
     private Button btn_2;
@@ -38,14 +40,24 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
     private Button btn_17;
     private Button btn_18;
     private Button btn_19;
-
     private Button btn_20;
+
+
+    private PermissionsChecker mPermissionsChecker; // 权限检测器
+
+    // 所需的全部权限
+    static final String[] PERMISSIONS = new String[]{
+        permission.READ_EXTERNAL_STORAGE,
+        permission.WRITE_EXTERNAL_STORAGE
+    };
+
+    private static final int REQUEST_CODE = 0; // 请求码
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-
+        initPermission();
     }
 
     @Override
@@ -55,7 +67,7 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
 
     protected void initView() {
 //        initActionBar();
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
+//        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
         btn_1 = (Button) findViewById(R.id.btn_1);
         btn_1.setOnClickListener(this);
         btn_2 = (Button) findViewById(R.id.btn_2);
@@ -105,19 +117,24 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
+                // 跳转到Toolbar测试页
                 Intent intent = new Intent(this, ToolbarActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_2:
+                // 跳转到网络测试页
                 Intent intent2 = new Intent(this, NetWorkActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.btn_3:
+                // 跳转到RecylerView测试页
                 Intent intent3 = new Intent(this, RecyclerViewActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.btn_4:
-
+                // 跳转到定位测试页面
+                Intent intent4 = new Intent(this, LocationActivity.class);
+                startActivity(intent4);
                 break;
             case R.id.btn_5:
 
@@ -171,6 +188,37 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // 缺少权限时, 进入权限配置页面
+        if (mPermissionsChecker.lacksPermissions(PERMISSIONS)) {
+            startPermissionsActivity();
+        }
+    }
+
+    /**
+     * 初始化权限检查器
+     */
+    private void initPermission() {
+        mPermissionsChecker = new PermissionsChecker(this);
+    }
+
+    /**
+     * 打开权限获取页面
+     */
+    private void startPermissionsActivity() {
+        PermissionsActivity.startActivityForResult(this, REQUEST_CODE, PERMISSIONS);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // 拒绝时, 关闭页面, 缺少主要权限, 无法运行
+        if (requestCode == REQUEST_CODE && resultCode == PermissionsActivity.PERMISSIONS_DENIED) {
+            ToastUtils.toast(this,"为了不影响用户体验，请授予SD卡读写权限");
+        }
+    }
 
 
 }
