@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.network.NetWorkActivity;
+import com.weerjean.testdemo.other.OtherActivity;
 import com.weerjean.testdemo.recyclerview.RecyclerViewActivity;
 import com.weerjean.testdemo.toolbar.ToolbarActivity;
 import com.weerjean.testdemo.utils.ToastUtils;
@@ -137,6 +138,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 startActivity(intent4);
                 break;
             case R.id.btn_5:
+                Intent intent5 = new Intent(this, OtherActivity.class);
+                startActivity(intent5);
 
                 break;
             case R.id.btn_6:

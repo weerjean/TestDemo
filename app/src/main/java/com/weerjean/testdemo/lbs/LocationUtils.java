@@ -153,7 +153,7 @@ public class LocationUtils {
         //可选，V7.2版本新增能力
         //如果设置了该接口，首次启动定位时，会先判断当前Wi-Fi是否超出有效期，若超出有效期，会先重新扫描Wi-Fi，然后定位
 
-        option.setEnableSimulateGps(false);
+//        option.setEnableSimulateGps(false);
         //可选，设置是否需要过滤GPS仿真结果，默认需要，即参数为false
 
         option.setIsNeedAddress(true);
