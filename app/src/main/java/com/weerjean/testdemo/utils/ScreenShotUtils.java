@@ -79,7 +79,7 @@ public class ScreenShotUtils {
      * @param context
      * @return
      */
-    public static String getSnapshot(Activity context) {
+    public static String getSnapshotFile(Activity context) {
 
         String fileName ="";
         View view = context.getWindow().getDecorView();
@@ -103,6 +103,21 @@ public class ScreenShotUtils {
 
         }
         return fileName;
+
+    }
+    /**
+     * 整个屏幕截屏，可以截屏webview
+     * @param context
+     * @return
+     */
+    public static Bitmap getSnapshotBitmap(Activity context) {
+
+        View view = context.getWindow().getDecorView();
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+
+        return bitmap;
 
     }
 

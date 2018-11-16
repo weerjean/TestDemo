@@ -11,11 +11,7 @@ import android.webkit.WebView;
 import android.widget.LinearLayout;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
-import com.weerjean.testdemo.utils.CommenUtils;
 import com.weerjean.testdemo.utils.ScreenShotUtils;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 /**
  * Created by : weiwenjie986 on 18/11/1 下午3:59. Description :
@@ -39,7 +35,7 @@ public class BaseWebActivity extends BaseToolbarActivity {
         mToolbar.setNavigationOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                picPath = ScreenShotUtils.getSnapshot(BaseWebActivity.this);
+                picPath = ScreenShotUtils.getSnapshotFile(BaseWebActivity.this);
                 Intent intent = getIntent();
                 intent.putExtra("picPath", picPath);
                 setResult(RESULT_OK, intent);
