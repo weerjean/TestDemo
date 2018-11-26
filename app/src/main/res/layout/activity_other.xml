@@ -14,28 +14,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="截图"/>
+            android:text="截图1"/>
 
         <Button
             android:id="@+id/btn_other_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Web截图"/>
+            android:text="截图1"/>
 
         <Button
             android:id="@+id/btn_other_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="功能三"/>
+            android:text="截图3"/>
 
         <Button
             android:id="@+id/btn_other_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="功能四"/>
+            android:text="文本样式"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_other_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VPN/PROXY"/>
+
+        <Button
+            android:id="@+id/btn_other_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="进程列表1"/>
+
+        <Button
+            android:id="@+id/btn_other_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="进程列表2"/>
+
+        <Button
+            android:id="@+id/btn_other_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="进程列表3"/>
 
     </LinearLayout>
 
