@@ -7,6 +7,7 @@ import com.hy.okhttp.cookie.CookieJarImpl;
 import com.hy.okhttp.cookie.store.PersistentCookieStore;
 import com.hy.okhttp.https.HttpsUtils;
 import com.hy.okhttp.log.LoggerInterceptor;
+import com.weerjean.testdemo.lbs.LocationUtils;
 import com.weerjean.testdemo.utils.Constants;
 
 import java.io.IOException;
@@ -26,9 +27,15 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
         application=this;
+        //初始化okhttp
         initOkhttp();
+        //初始化定位
+        LocationUtils.getInstance().initLocation(this);
     }
 
+    /**
+     * 初始化okhttp
+     */
     private void initOkhttp() {
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
