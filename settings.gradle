@@ -1,2 +1,2 @@
-include ':app', ':lbs'
+include ':app', ':lbs', ':hook'
 include ':okhttp'

@@ -10,32 +10,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/btn_other_screenshot"
+            android:id="@+id/btn_hook_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="截图1"/>
+            android:text="hook测试"/>
 
         <Button
-            android:id="@+id/btn_other_2"
+            android:id="@+id/btn_hook_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="截图1"/>
+            android:text="功能2"/>
 
         <Button
-            android:id="@+id/btn_other_3"
+            android:id="@+id/btn_hook_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="截图3"/>
+            android:text="功能3"/>
 
         <Button
-            android:id="@+id/btn_other_4"
+            android:id="@+id/btn_hook_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="文本样式"/>
+            android:text="功能4"/>
 
     </LinearLayout>
 
@@ -43,32 +43,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/btn_other_5"
+            android:id="@+id/btn_hook_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="VPN/PROXY"/>
+            android:text="功能5"/>
 
         <Button
-            android:id="@+id/btn_other_6"
+            android:id="@+id/btn_hook_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="进程列表1"/>
+            android:text="功能6"/>
 
         <Button
-            android:id="@+id/btn_other_7"
+            android:id="@+id/btn_hook_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="进程列表2"/>
+            android:text="功能7"/>
 
         <Button
-            android:id="@+id/btn_other_8"
+            android:id="@+id/btn_hook_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="进程列表3"/>
+            android:text="功能8"/>
 
     </LinearLayout>
 
@@ -76,28 +76,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/btn_other_9"
+            android:id="@+id/btn_hook_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hook"/>
+            android:text="功能9"/>
 
         <Button
-            android:id="@+id/btn_other_10"
+            android:id="@+id/btn_hook_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="功能十"/>
+            android:text="功能10"/>
 
         <Button
-            android:id="@+id/btn_other_11"
+            android:id="@+id/btn_hook_11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="功能11"/>
 
         <Button
-            android:id="@+id/btn_other_12"
+            android:id="@+id/btn_hook_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -106,13 +106,13 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_other_result"
+        android:id="@+id/tv_hook_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="test"/>
 
     <ImageView
-        android:id="@+id/iv_other_screenshot_show"
+        android:id="@+id/iv_hook_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -1,26 +1,13 @@
 package com.weerjean.testdemo.other;
 
-import android.Manifest;
-import android.app.AppOpsManager;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
-import android.os.Build;
-import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
-import android.text.style.TextAppearanceSpan;
-import android.text.style.TypefaceSpan;
-import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
-import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.utils.BitmapUtils;
 import com.weerjean.testdemo.utils.CommenUtils;
 import com.weerjean.testdemo.utils.CommenUtils.ProcessInfo;
@@ -38,7 +24,6 @@ import com.weerjean.testdemo.utils.ToastUtils;
 import com.weerjean.testdemo.view.MyClickableSpan;
 import com.weerjean.testdemo.view.MyClickableSpan.OnLinkClickListener;
 import com.weerjean.testdemo.webview.BaseWebActivity;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,9 +33,8 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
 
     private TextView mTextView;
     private ImageView mImageView;
-    private static int MY_PERMISSIONS_REQUEST_PACKAGE_USAGE_STATS=1;
-
     public static int SCREENSHOT_REQUEST_CODE = 1;
+    private int count ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,6 +56,10 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
         Button other6Btn = (Button) findViewById(R.id.btn_other_6);
         Button other7Btn = (Button) findViewById(R.id.btn_other_7);
         Button other8Btn = (Button) findViewById(R.id.btn_other_8);
+        Button other9Btn = (Button) findViewById(R.id.btn_other_9);
+        Button other10Btn = (Button) findViewById(R.id.btn_other_10);
+        Button other11Btn = (Button) findViewById(R.id.btn_other_11);
+        Button other12Btn = (Button) findViewById(R.id.btn_other_12);
         otherScreenShotBtn.setOnClickListener(this);
         other2Btn.setOnClickListener(this);
         other3Btn.setOnClickListener(this);
@@ -80,6 +68,10 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
         other6Btn.setOnClickListener(this);
         other7Btn.setOnClickListener(this);
         other8Btn.setOnClickListener(this);
+        other9Btn.setOnClickListener(this);
+        other10Btn.setOnClickListener(this);
+        other11Btn.setOnClickListener(this);
+        other12Btn.setOnClickListener(this);
 
     }
 
@@ -91,6 +83,7 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
 
     @Override
     public void onClick(View v) {
+        count++;
         switch (v.getId()){
             case R.id.btn_other_screenshot:
                 //调用截图
@@ -132,8 +125,9 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
                 boolean isUseedVpn = CommenUtils.isVpnUsed();
                 boolean isWifiProxy = CommenUtils.isWifiProxy();
                 boolean isInstallHookTools = CommenUtils.isInstalledHookTools();
+                String isRootSystem = CommenUtils.isRootSystem();
 
-                mTextView.setText("是否使用了VPN:"+isUseedVpn+"\r\n"+"是否使用了代理："+isWifiProxy+"\r\n"+"是否安装了hook工具："+isInstallHookTools);
+                mTextView.setText("是否使用了VPN:"+isUseedVpn+"\r\n"+"是否使用了代理："+isWifiProxy+"\r\n"+"是否安装了hook工具："+isInstallHookTools+isWifiProxy+"\r\n"+"是否root："+isRootSystem);
 
                 break;
             case R.id.btn_other_6:
@@ -154,6 +148,28 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
 
                 mTextView.setText("进程列表:"+ runningProcesses3);
 
+                break;
+            case R.id.btn_other_9:
+
+                if(isHooked()){
+                    mTextView.setText("hook isHooked()方法成功");
+                    ToastUtils.toast(this,"hook isHooked()方法成功");
+                }else{
+                    mTextView.setText("hook isHooked()方法失败");
+                    ToastUtils.toast(this,"hook isHooked()方法失败");
+                }
+                break;
+
+            case R.id.btn_other_10:
+                mTextView.setText(count+"");
+                break;
+            case R.id.btn_other_11:
+
+                mTextView.setText(count+"");
+                break;
+            case R.id.btn_other_12:
+
+                mTextView.setText(count+"");
                 break;
             default:
                 ToastUtils.toast(this,"点击无效，没有找到此按钮");
@@ -177,4 +193,9 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
             }
         }
     }
+
+    public boolean isHooked(){
+        return false;
+    }
+
 }

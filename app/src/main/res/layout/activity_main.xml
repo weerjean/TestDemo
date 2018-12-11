@@ -44,7 +44,7 @@
                 android:id="@+id/btn_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="功能"/>
+                android:text="Hook"/>
             <Button
                 android:id="@+id/btn_7"
                 android:layout_width="match_parent"

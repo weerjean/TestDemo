@@ -2,6 +2,7 @@ package com.weerjean.testdemo;
 
 import android.Manifest;
 import android.Manifest.permission;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.weerjean.testdemo.base.BaseToolbarActivity;
+import com.weerjean.testdemo.hook.HookActivity;
 import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.other.OtherActivity;
@@ -143,6 +145,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
 
                 break;
             case R.id.btn_6:
+            Intent intent6 = new Intent(this, HookActivity.class);
+                startActivity(intent6);
 
                 break;
             case R.id.btn_7:

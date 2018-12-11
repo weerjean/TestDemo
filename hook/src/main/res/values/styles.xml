@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- 主要色调 titile的颜色 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 状态栏的颜色 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 设置菜单的样式为不覆盖titleBar-->
+        <item name="actionOverflowMenuStyle">@style/my_menu</item>
+
+<!--        <item name="android:listDivider">@drawable/listdivider</item>-->
+
+    </style>
+
+    <style name="my_menu" parent="Base.Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!-- 设置锚点重叠为false及不覆盖菜单 -->
+        <item name="overlapAnchor">false</item>
+        <!-- 设置背景色-->
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+        <!-- 设置也菜单的距离 -->
+        <item name="android:dropDownVerticalOffset">0dip</item>
+    </style>
+
+</resources>
