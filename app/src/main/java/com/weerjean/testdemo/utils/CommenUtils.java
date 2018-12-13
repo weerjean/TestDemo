@@ -326,4 +326,27 @@ public class CommenUtils {
         public boolean isSystem;
     }
 
+    public static String isRootSystem() {
+
+//        if (systemRootState == kSystemRootStateEnable) {
+//            return "Y";
+//        } else if (systemRootState == kSystemRootStateDisable) {
+//            return "N";
+//        }
+        File f = null;
+        final String kSuSearchPaths[] = {"/system/bin/", "/system/xbin/", "/system/sbin/", "/sbin/", "/vendor/bin/"};
+        try {
+            for (int i = 0; i < kSuSearchPaths.length; i++) {
+                f = new File(kSuSearchPaths[i] + "su");
+                if (f != null && f.exists()) {
+//                    systemRootState = kSystemRootStateEnable;
+                    return "Y";
+                }
+            }
+        } catch (Exception e) {
+        }
+//        systemRootState = kSystemRootStateDisable;
+        return "N";
+    }
+
 }
