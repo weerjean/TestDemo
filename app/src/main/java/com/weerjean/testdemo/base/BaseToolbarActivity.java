@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import com.weerjean.testdemo.R;
 
 /**
@@ -24,7 +26,10 @@ public abstract class BaseToolbarActivity extends BaseActivity {
     protected abstract int getLayoutId();
 
     protected void initToolbar() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_1);
+
+        ViewGroup rootView = (ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content);
+        mToolbar = (Toolbar)getLayoutInflater().inflate(R.layout.toolbar_1,null);
+        rootView.addView(mToolbar,LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
         mToolbar.setNavigationIcon(R.mipmap.ic_back);
         // 如果不设置主标题，ToolBar上默认显示的AppName
 //        setTitle("ToolBar");
@@ -36,8 +41,8 @@ public abstract class BaseToolbarActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                // TODO: 2016/8/27  添加界面切换动画
-            }
+                overridePendingTransition(R.anim.translate_left_enter, R.anim.translate_right_exit);
+                }
         });
     }
 

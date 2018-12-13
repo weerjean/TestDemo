@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <include layout="@layout/toolbar_1"></include>
+    <!--<include layout="@layout/toolbar_1"></include>-->
 
     <!--下拉刷新控件-->
 <!--    <android.support.v4.widget.SwipeRefreshLayout
