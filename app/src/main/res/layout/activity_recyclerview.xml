@@ -17,7 +17,7 @@
             android:id="@+id/recylerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="#FF4081"yuv2gray
+            android:divider="#FF4081"
             android:dividerHeight="10dp"
             android:padding="5dp">
 
