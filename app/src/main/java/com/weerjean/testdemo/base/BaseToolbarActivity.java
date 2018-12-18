@@ -7,6 +7,8 @@ import android.view.View;
 
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.widget.LinearLayout;
 import com.weerjean.testdemo.R;
 
 /**
@@ -26,10 +28,11 @@ public abstract class BaseToolbarActivity extends BaseActivity {
     protected abstract int getLayoutId();
 
     protected void initToolbar() {
-
-        ViewGroup rootView = (ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content);
+        // 获取根view
+        ViewGroup rootView = (ViewGroup) ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
         mToolbar = (Toolbar)getLayoutInflater().inflate(R.layout.toolbar_1,null);
-        rootView.addView(mToolbar,LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
+        // 将toolbar添加到根view
+        rootView.addView(mToolbar,0);
         mToolbar.setNavigationIcon(R.mipmap.ic_back);
         // 如果不设置主标题，ToolBar上默认显示的AppName
 //        setTitle("ToolBar");

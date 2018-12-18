@@ -161,7 +161,11 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
                 break;
 
             case R.id.btn_other_10:
-                mTextView.setText(count+"");
+
+                String string = "";
+                byte[] bytes = string.getBytes();
+                int length = bytes.length;
+                mTextView.setText(count+":length="+length);
                 break;
             case R.id.btn_other_11:
 
