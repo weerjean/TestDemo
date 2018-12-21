@@ -1,11 +1,8 @@
 package com.weerjean.testdemo;
 
-import android.Manifest;
 import android.Manifest.permission;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +13,9 @@ import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.other.OtherActivity;
 import com.weerjean.testdemo.recyclerview.RecyclerViewActivity;
-import com.weerjean.testdemo.toolbar.ToolbarActivity;
+import com.weerjean.testdemo.sensor.SensorActivity;
+import com.weerjean.testdemo.titlebar.MyTitleBarActivity;
+import com.weerjean.testdemo.titlebar.ToolbarActivity;
 import com.weerjean.testdemo.utils.ToastUtils;
 import com.weerjean.testdemo.utils.permission.PermissionsActivity;
 import com.weerjean.testdemo.utils.permission.PermissionsChecker;
@@ -150,10 +149,13 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
 
                 break;
             case R.id.btn_7:
+                Intent intent7 = new Intent(this, MyTitleBarActivity.class);
+                startActivity(intent7);
 
                 break;
             case R.id.btn_8:
-
+                Intent intent8 = new Intent(this, SensorActivity.class);
+                startActivity(intent8);
                 break;
             case R.id.btn_9:
 

@@ -26,6 +26,8 @@
     <!-- SD卡读取权限，用户写入离线定位数据-->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
     <!--百度定位权限-->
+    <!--摇一摇震动-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".base.MyApplication"
@@ -41,7 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".toolbar.ToolbarActivity"></activity>
+        <activity android:name=".titlebar.ToolbarActivity"></activity>
         <activity android:name=".recyclerview.RecyclerViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity android:name=".network.NetWorkActivity"></activity>
@@ -52,6 +54,8 @@
         <activity android:name=".other.OtherActivity"></activity>
         <activity android:name=".webview.BaseWebActivity"></activity>
         <activity android:name=".hook.HookActivity"></activity>
+        <activity android:name=".titlebar.MyTitleBarActivity"></activity>
+        <activity android:name=".sensor.SensorActivity"></activity>
 
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
 

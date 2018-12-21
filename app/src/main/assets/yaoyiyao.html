@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>摇一摇</title>
+</head>
+<body>
+  <div>
+    摇一摇
+  </div>
+  <script>
+    const SHAKE_SPEED = 300;
+    let lastTime = 0;//上次变化的时间
+    let x = y = z = lastX = lastY = lastZ = 0;//位置变量初始化
+
+    function  motionHandler(event) {
+      let acceleration = event.accelerationIncludingGravity;
+      let curTime = Date.now();//取得当前时间
+      if ((curTime - lastTime) > 120) {
+        let diffTime = curTime - lastTime;
+        lastTime = curTime;
+        x = acceleration.x;
+        y = acceleration.y;
+        z = acceleration.z;
+        //计算摇动速度
+        let speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 1000;
+        if (speed > SHAKE_SPEED) {
+          alert("你摇动了手机");
+            window.navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+            if (navigator.vibrate) {
+                navigator.vibrate([500, 300, 400, 300])
+            } else if(navigator.webkitVibrate){
+                navigator.webkitVibrate([500, 300, 400, 300])
+            }else{
+                alert('不支持震动')
+            }
+        }
+        lastX = x;
+        lastY = y;
+        lastZ = z;
+      }
+    }
+    if(window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', motionHandler, false);
+    } else {
+      alert("你的设备不支持位置感应");
+    }
+  </script>
+</body>
+</html>
