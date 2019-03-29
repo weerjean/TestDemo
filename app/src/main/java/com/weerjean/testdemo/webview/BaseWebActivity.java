@@ -54,7 +54,7 @@ public class BaseWebActivity extends BaseToolbarActivity {
     }
 
     private void initData() {
-        mBaseWebview.loadUrl("https://www.baidu.com");
+        mBaseWebview.loadUrl("file:///android_asset/yaoyiyao.html");
     }
 
     private void initView() {

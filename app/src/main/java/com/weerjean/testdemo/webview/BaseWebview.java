@@ -50,9 +50,7 @@ public class BaseWebview extends WebView {
         webSettings.setAppCacheEnabled(true);
         webSettings.setDatabaseEnabled(true);
         webSettings.setDatabasePath(appCacheDir);
-        if (android.os.Build.VERSION.SDK_INT >= 16) {
-            webSettings.setAllowUniversalAccessFromFileURLs(true);
-        }
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
         webSettings.setUserAgentString(webSettings.getUserAgentString());
 
         if (android.os.Build.VERSION.SDK_INT >= 19) {

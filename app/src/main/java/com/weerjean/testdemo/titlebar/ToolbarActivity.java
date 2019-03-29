@@ -1,4 +1,4 @@
-package com.weerjean.testdemo.toolbar;
+package com.weerjean.testdemo.titlebar;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
