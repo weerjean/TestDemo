@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '26.0.2'
+    def globalConfiguration = rootProject.ext
 
+    compileSdkVersion globalConfiguration.compileSdkVersion
+    buildToolsVersion globalConfiguration.buildToolsVersion
 
     defaultConfig {
         applicationId "com.weerjean.testdemo"
-        minSdkVersion 18
-        targetSdkVersion 23
+        minSdkVersion globalConfiguration.minSdkVersion
+        targetSdkVersion globalConfiguration.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -28,8 +29,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile project(':okhttp')
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.google.code.gson:gson:2.7'
@@ -37,6 +38,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:8.4.0'
     implementation 'com.jaredrummler:android-processes:1.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'//正式版本
+    implementation "com.facebook.react:react-native:0.59.2" // From node_modules
+
 //    implementation 'com.blankj:utilcode:1.22.1'
 //    implementation 'pub.devrel:easypermissions:2.0.0'
 }
