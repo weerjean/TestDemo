@@ -1,9 +1,12 @@
 package com.weerjean.testdemo.other;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.SpannableStringBuilder;
@@ -13,17 +16,24 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hy.okhttp.utils.L;
 import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
+import com.weerjean.testdemo.utils.Base64;
 import com.weerjean.testdemo.utils.BitmapUtils;
 import com.weerjean.testdemo.utils.CommenUtils;
 import com.weerjean.testdemo.utils.CommenUtils.ProcessInfo;
 import com.weerjean.testdemo.utils.FileUtils;
+import com.weerjean.testdemo.utils.RSAUtil;
 import com.weerjean.testdemo.utils.ScreenShotUtils;
 import com.weerjean.testdemo.utils.ToastUtils;
 import com.weerjean.testdemo.view.MyClickableSpan;
 import com.weerjean.testdemo.view.MyClickableSpan.OnLinkClickListener;
 import com.weerjean.testdemo.webview.BaseWebActivity;
+
+import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -31,6 +41,7 @@ import java.util.List;
  */
 public class OtherActivity extends BaseToolbarActivity implements OnClickListener {
 
+    private static final String TAG = "OtherActivity";
     private TextView mTextView;
     private ImageView mImageView;
     public static int SCREENSHOT_REQUEST_CODE = 1;
@@ -169,15 +180,61 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
                 break;
             case R.id.btn_other_11:
 
+                openOtherApp();
+
+                try {
+                    String data = "22522614";//22522614
+                    byte[] bytes1 = RSAUtil.encryptByPublicKey(data.getBytes(Charset.forName("UTF-8")), RSAUtil.getPublicKey());
+                    String encode = Base64.encode(bytes1);
+                    L.d(TAG,"encode="+encode);
+                    byte[] bytes2 = RSAUtil.decryptByPrivateKey(Base64.decode(encode.getBytes(Charset.forName("UTF-8"))), RSAUtil.getPrivateKey());
+                    String decode = new String(bytes2, Charset.forName("UTF-8"));
+                    L.d(TAG,"decode="+decode);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
                 mTextView.setText(count+"");
                 break;
             case R.id.btn_other_12:
+
+                try {
+                    String data = "113.948";//22522614
+                    byte[] bytes1 = RSAUtil.encryptByPublicKey(data.getBytes(Charset.forName("UTF-8")), RSAUtil.getPublicKey());
+                    String encode = Base64.encode(bytes1);
+                    L.d(TAG,"encode="+encode);
+                    byte[] bytes2 = RSAUtil.decryptByPrivateKey(Base64.decode(encode.getBytes(Charset.forName("UTF-8"))), RSAUtil.getPrivateKey());
+                    String decode = new String(bytes2, Charset.forName("UTF-8"));
+                    L.d(TAG,"decode="+decode);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
                 mTextView.setText(count+"");
                 break;
             default:
                 ToastUtils.toast(this,"点击无效，没有找到此按钮");
 
+        }
+
+    }
+
+    private void openOtherApp() {
+
+        PackageManager packageManager = getPackageManager();
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("payidai://paem.com?url=https://www.pingan.com/huodong/csjfdy.shtml&mid=iloan"));
+//                Uri.parse("payidai://paem.com?url=https://test1-puhui-web.pingan.com.cn:10143/manager/stg/paem/online/wealth/conference/index.html&mid=iloan"));
+        List<ResolveInfo> activities =packageManager.queryIntentActivities(intent, 0);
+        boolean isValid = !activities.isEmpty();
+        if (isValid) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "打开第三方APP失败", Toast.LENGTH_SHORT).show();
         }
 
     }
