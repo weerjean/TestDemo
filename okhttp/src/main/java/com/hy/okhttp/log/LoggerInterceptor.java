@@ -112,10 +112,6 @@ public class LoggerInterceptor implements Interceptor
             L.p( L.LOG_LV_D, "method : " + request.method());
             L.p( L.LOG_LV_D, "url : " + url);
 
-            if(!url.contains("pingan.com.cn")&&!url.contains("1qianbao.com")){
-                L.e("***************非平安ss地址或1qianbao地址*******************");
-            }
-
             if (headers != null && headers.size() > 0)
             {
                 L.p( L.LOG_LV_D, "headers : " + headers.toString());

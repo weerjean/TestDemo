@@ -23,7 +23,7 @@ import com.weerjean.testdemo.utils.ToastUtils;
 import java.util.List;
 
 /**
- * Created by : weiwenjie986 on 18/10/31 下午4:39. Description :
+ * Created by : weerjean on 18/10/31 下午4:39. Description :
  */
 public class LocationActivity extends BaseToolbarActivity implements OnClickListener {
 

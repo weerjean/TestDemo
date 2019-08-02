@@ -12,7 +12,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * Created by : weiwenjie986
+ * Created by : weerjean
  */
 public class HttpUtils {
 

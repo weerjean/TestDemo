@@ -12,7 +12,7 @@ import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.utils.ToastUtils;
 
 /**
- * Created by : weiwenjie986 on 18/11/26 下午4:13. Description :
+ * Created by : weerjean on 18/11/26 下午4:13. Description :
  */
 public class HookActivity extends BaseToolbarActivity implements OnClickListener {
 

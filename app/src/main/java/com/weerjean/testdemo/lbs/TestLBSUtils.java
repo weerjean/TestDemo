@@ -14,7 +14,7 @@ import android.provider.Settings.SettingNotFoundException;
 import com.hy.okhttp.utils.L;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 上午9:50. Description :
+ * Created by : weerjean on 18/11/1 上午9:50. Description :
  */
 public class TestLBSUtils {
 

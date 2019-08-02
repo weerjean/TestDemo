@@ -4,7 +4,7 @@ import android.content.Context;
 import java.io.File;
 
 /**
- * Created by : weiwenjie986 on 18/11/5 下午5:00. Description :
+ * Created by : weerjean on 18/11/5 下午5:00. Description :
  */
 public class FileUtils {
 

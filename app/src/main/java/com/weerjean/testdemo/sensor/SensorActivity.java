@@ -22,7 +22,7 @@ import com.weerjean.testdemo.base.BaseCustomTitleBarActivity;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by : weiwenjie986 on 18/12/19 上午10:14. Description :
+ * Created by : weerjean on 18/12/19 上午10:14. Description :
  */
 public class SensorActivity extends BaseCustomTitleBarActivity implements SensorEventListener {
 

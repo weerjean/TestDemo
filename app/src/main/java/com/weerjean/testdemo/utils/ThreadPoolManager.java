@@ -4,7 +4,7 @@ import com.weerjean.testdemo.network.NetWorkActivity;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
- * Created by : weiwenjie986 on 18/10/29 下午8:32.
+ * Created by : weerjean on 18/10/29 下午8:32.
  * Description :线程池管理工具类
  */
 

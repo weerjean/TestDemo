@@ -13,7 +13,7 @@ import com.weerjean.testdemo.R;
 
 
 /**
- * Created by : weiwenjie986 on 18/12/18 下午4:49.
+ * Created by : weerjean on 18/12/18 下午4:49.
  * Description :自定义Titlebar
  */
 

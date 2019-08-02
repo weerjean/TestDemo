@@ -104,11 +104,11 @@ public class TestHttpsActivity extends BaseToolbarActivity implements View.OnCli
                 OkhttpUtils.post(this, Constants.YQB_URL);
                 break;
             case R.id.btn_7:
-                okHttpUtilsDoGet(Constants.YQB_URL_PRD);
+                okHttpUtilsDoGet(Constants.YQB_URL);
                 break;
             case R.id.btn_8:
-               // okHttpUtilsDoPost(Constants.YQB_URL_PRD);
-                OkhttpUtils.post(this, Constants.YQB_URL_PRD);
+               // okHttpUtilsDoPost(Constants.YQB_URL);
+                OkhttpUtils.post(this, Constants.YQB_URL);
                 break;
             case R.id.btn_9:
                 okHttpUtilsDoGet(Constants.BAIDU_URL);

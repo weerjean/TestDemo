@@ -7,7 +7,7 @@ import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 下午4:01. Description :
+ * Created by : weerjean on 18/11/1 下午4:01. Description :
  */
 public class BaseWebview extends WebView {
 

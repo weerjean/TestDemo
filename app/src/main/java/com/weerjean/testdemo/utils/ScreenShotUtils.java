@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.io.FileOutputStream;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 下午3:48. Description :
+ * Created by : weerjean on 18/11/1 下午3:48. Description :
  */
 public class ScreenShotUtils {
 

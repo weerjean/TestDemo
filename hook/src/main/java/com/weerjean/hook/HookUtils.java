@@ -8,7 +8,7 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 /**
- * Created by : weiwenjie986 on 18/11/26 下午4:12.
+ * Created by : weerjean on 18/11/26 下午4:12.
  * Description :hook工具类
  */
 public class HookUtils implements IXposedHookLoadPackage {

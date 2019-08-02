@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.weerjean.testdemo.activity.PullRefreshActivity;
 import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.hook.HookActivity;
 import com.weerjean.testdemo.lbs.LocationActivity;
@@ -158,6 +159,8 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 startActivity(intent8);
                 break;
             case R.id.btn_9:
+                Intent intent9 = new Intent(this, PullRefreshActivity.class);
+                startActivity(intent9);
 
                 break;
             case R.id.btn_10:

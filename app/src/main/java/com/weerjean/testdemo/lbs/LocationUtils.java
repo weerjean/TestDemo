@@ -12,7 +12,7 @@ import com.weerjean.testdemo.MainActivity;
 import com.weerjean.testdemo.R;
 
 /**
- * Created by : weiwenjie986 on 18/10/31 下午1:35. Description :
+ * Created by : weerjean on 18/10/31 下午1:35. Description :
  */
 public class LocationUtils {
 

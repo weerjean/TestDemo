@@ -8,7 +8,7 @@ import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.view.CustomTitleBar;
 
 /**
- * Created by : weiwenjie986 on 18/12/18 下午5:16.
+ * Created by : weerjean on 18/12/18 下午5:16.
  * Description :自定义TitleBar基类
  */
 public abstract class BaseCustomTitleBarActivity extends BaseActivity {

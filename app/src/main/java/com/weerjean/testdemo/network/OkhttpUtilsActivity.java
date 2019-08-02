@@ -212,7 +212,7 @@ public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnC
             }
         }
 
-        OkHttpUtils.post().url(Constants.YQB_URL_PRD)
+        OkHttpUtils.post().url(Constants.YQB_URL)
                 .params(mLinkedHashMap)
                 .build()
                 .execute(new StringCallback() {
@@ -297,7 +297,7 @@ public class OkhttpUtilsActivity extends BaseToolbarActivity implements View.OnC
             }
         }
 
-        OkHttpUtils.post().url(Constants.YQB_URL_PRD)
+        OkHttpUtils.post().url(Constants.YQB_URL)
                 .params(mLinkedHashMap)
                 .addFile("fileKey","fileName",file)
                 .build()

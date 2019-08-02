@@ -11,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Created by : weiwenjie986 on 18/11/5 下午4:45. Description :
+ * Created by : weerjean on 18/11/5 下午4:45. Description :
  */
 public class BitmapUtils {
 

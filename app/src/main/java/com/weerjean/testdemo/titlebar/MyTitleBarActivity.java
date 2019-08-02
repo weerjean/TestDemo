@@ -9,7 +9,7 @@ import com.weerjean.testdemo.R;
 import com.weerjean.testdemo.base.BaseCustomTitleBarActivity;
 
 /**
- * Created by : weiwenjie986 on 18/12/18 下午5:24. Description :
+ * Created by : weerjean on 18/12/18 下午5:24. Description :
  */
 public class MyTitleBarActivity extends BaseCustomTitleBarActivity implements OnClickListener {
 

@@ -14,7 +14,7 @@ import com.weerjean.testdemo.base.BaseToolbarActivity;
 import com.weerjean.testdemo.utils.ScreenShotUtils;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 下午3:59. Description :
+ * Created by : weerjean on 18/11/1 下午3:59. Description :
  */
 public class BaseWebActivity extends BaseToolbarActivity {
 

@@ -37,7 +37,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 下午3:20. Description :
+ * Created by : weerjean on 18/11/1 下午3:20. Description :
  */
 public class OtherActivity extends BaseToolbarActivity implements OnClickListener {
 
@@ -227,8 +227,7 @@ public class OtherActivity extends BaseToolbarActivity implements OnClickListene
 
         PackageManager packageManager = getPackageManager();
         Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("payidai://paem.com?url=https://www.pingan.com/huodong/csjfdy.shtml&mid=iloan"));
-//                Uri.parse("payidai://paem.com?url=https://test1-puhui-web.pingan.com.cn:10143/manager/stg/paem/online/wealth/conference/index.html&mid=iloan"));
+                Uri.parse("xieyi://baoming?url=https://www.baidu.com"));
         List<ResolveInfo> activities =packageManager.queryIntentActivities(intent, 0);
         boolean isValid = !activities.isEmpty();
         if (isValid) {

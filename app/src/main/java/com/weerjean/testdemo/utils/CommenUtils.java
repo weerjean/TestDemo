@@ -41,7 +41,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by : weiwenjie986 on 18/11/1 下午3:09. Description :
+ * Created by : weerjean on 18/11/1 下午3:09. Description :
  */
 public class CommenUtils {
 

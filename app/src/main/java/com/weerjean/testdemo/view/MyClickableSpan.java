@@ -6,7 +6,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 
 /**
- * Created by : weiwenjie986 on 18/11/6 下午3:07.
+ * Created by : weerjean on 18/11/6 下午3:07.
  * Description :修改TextView中可点击字体的颜色
  */
 public class MyClickableSpan extends ClickableSpan {
