@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 
 import com.weerjean.testdemo.activity.PullRefreshActivity;
@@ -14,12 +15,14 @@ import com.weerjean.testdemo.lbs.LocationActivity;
 import com.weerjean.testdemo.network.NetWorkActivity;
 import com.weerjean.testdemo.other.OtherActivity;
 import com.weerjean.testdemo.recyclerview.RecyclerViewActivity;
+import com.weerjean.testdemo.rn.BaseRNActivty;
 import com.weerjean.testdemo.sensor.SensorActivity;
 import com.weerjean.testdemo.titlebar.MyTitleBarActivity;
 import com.weerjean.testdemo.titlebar.ToolbarActivity;
 import com.weerjean.testdemo.utils.ToastUtils;
 import com.weerjean.testdemo.utils.permission.PermissionsActivity;
 import com.weerjean.testdemo.utils.permission.PermissionsChecker;
+import com.weerjean.testdemo.view.BottomDialog;
 
 public class MainActivity extends BaseToolbarActivity implements View.OnClickListener {
 
@@ -159,14 +162,18 @@ public class MainActivity extends BaseToolbarActivity implements View.OnClickLis
                 startActivity(intent8);
                 break;
             case R.id.btn_9:
-                Intent intent9 = new Intent(this, PullRefreshActivity.class);
+                Intent intent9 = new Intent(this,BaseRNActivty.class);
                 startActivity(intent9);
 
                 break;
             case R.id.btn_10:
+                Intent intent10 = new Intent(this, PullRefreshActivity.class);
+                startActivity(intent10);
 
                 break;
             case R.id.btn_11:
+                final BottomDialog bottomDialog = new BottomDialog(this);
+                bottomDialog.show();
 
                 break;
             case R.id.btn_12:

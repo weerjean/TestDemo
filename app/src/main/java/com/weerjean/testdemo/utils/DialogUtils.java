@@ -4,6 +4,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.view.View;
+
+import com.weerjean.testdemo.view.BaseBottomDialog;
+import com.weerjean.testdemo.view.BottomDialog;
 
 /**
  * Created by weerjean on 2016/9/4.

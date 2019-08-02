@@ -1,4 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'config.gradle'
 buildscript {
     repositories {
         maven{
@@ -7,6 +8,11 @@ buildscript {
             // 外网访问仓库地址
 //            url'http://192.168.150.24:8081/nexus/content/groups/public/'
         }
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url "/Users/weiwenjie986/Documents/RN/Projects/TestDemo/node_modules/react-native/android"
+        }
+
         jcenter()
         google()
     }
@@ -24,6 +30,10 @@ allprojects {
             url'http://10.184.160.186:8081/nexus/content/groups/public/'
             // 外网访问仓库地址
 //            url'http://192.168.150.24:8081/nexus/content/groups/public/'
+        }
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url "/Users/weiwenjie986/Documents/RN/Projects/TestDemo/node_modules/react-native/android"
         }
         jcenter()
         google()

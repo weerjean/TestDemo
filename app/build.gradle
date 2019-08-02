@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    def globalConfiguration = rootProject.ext
 
+    compileSdkVersion globalConfiguration.compileSdkVersion
+    buildToolsVersion globalConfiguration.buildToolsVersion
 
     defaultConfig {
         applicationId "com.weerjean.testdemo"
-        minSdkVersion 18
-        targetSdkVersion 26
+        minSdkVersion globalConfiguration.minSdkVersion
+        targetSdkVersion globalConfiguration.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -37,6 +38,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:8.4.0'
     implementation 'com.jaredrummler:android-processes:1.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'//正式版本
+    implementation "com.facebook.react:react-native:0.59.2" // From node_modules
+
 //    implementation 'com.blankj:utilcode:1.22.1'
 //    implementation 'pub.devrel:easypermissions:2.0.0'
 }

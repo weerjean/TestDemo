@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_title_tip"
+        android:layout_gravity="center_horizontal"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:textColor="@color/black"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:paddingHorizontal="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black5"
+                android:textSize="35px"
+                android:text="@string/dialog_content1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black5"
+                android:textSize="35px"
+                android:text="@string/dialog_content2"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_select_agree_text"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40px"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black2"/>
+    <Button
+        android:id="@+id/btn_dialog_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_gray_button"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginVertical="15dp"
+        android:textColor="@color/white1"
+        android:textSize="50px"
+        android:text="我已阅读"/>
+
+</LinearLayout>

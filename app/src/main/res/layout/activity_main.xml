@@ -54,17 +54,17 @@
                 android:id="@+id/btn_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="功能"/>
+                android:text="摇一摇"/>
             <Button
                 android:id="@+id/btn_9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="下拉刷新"/>
+                android:layout_height="wrap_content"/>
+                android:text="RN"/>
             <Button
                 android:id="@+id/btn_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="功能"/>
+                android:text="下拉刷新"/>
             <Button
                 android:id="@+id/btn_11"
                 android:layout_width="match_parent"

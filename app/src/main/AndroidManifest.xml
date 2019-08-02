@@ -28,6 +28,8 @@
     <!--百度定位权限-->
     <!--摇一摇震动-->
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <!--浮窗权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
         android:name=".base.MyApplication"
@@ -56,6 +58,7 @@
         <activity android:name=".hook.HookActivity"></activity>
         <activity android:name=".titlebar.MyTitleBarActivity"></activity>
         <activity android:name=".sensor.SensorActivity"></activity>
+        <activity android:name=".rn.BaseRNActivty"></activity>
         <activity android:name=".activity.PullRefreshActivity"></activity>
 
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
@@ -67,6 +70,7 @@
 
 
         <meta-data android:name="android.max_aspect" android:value="2.34" />
+
 
     </application>
 
