@@ -4,7 +4,7 @@ buildscript {
     repositories {
         maven{
             // 内网访问仓库地址
-            url'http://10.184.160.186:8081/nexus/content/groups/public/'
+            url'http://10.184.160.105:8081/nexus/content/groups/public/'
             // 外网访问仓库地址
 //            url'http://192.168.150.24:8081/nexus/content/groups/public/'
         }
@@ -27,7 +27,7 @@ allprojects {
     repositories {
         maven{
             // 内网访问仓库地址
-            url'http://10.184.160.186:8081/nexus/content/groups/public/'
+            url'http://10.184.160.105:8081/nexus/content/groups/public/'
             // 外网访问仓库地址
 //            url'http://192.168.150.24:8081/nexus/content/groups/public/'
         }

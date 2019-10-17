@@ -3,17 +3,9 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/hook" />
-            <option value="$PROJECT_DIR$/lbs" />
-            <option value="$PROJECT_DIR$/okhttp" />
-          </set>
-        </option>
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../Android/gradle/gradle-4.10" />
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

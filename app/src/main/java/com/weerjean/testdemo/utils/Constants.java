@@ -20,4 +20,12 @@ public interface Constants {
     String PUBLIC_SERVER = "https://gank.io";
 
     String PUBLIC_FULI_IMG_URL = "/api/data/福利/10/";
+
+    String DXW_BASE_URL = "http://api.quchaogu.com";
+
+    String DXW_GET_LIST_URL = "/dxwapp/gegu/index";
+
+
+
+
 }
